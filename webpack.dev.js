@@ -10,7 +10,7 @@ module.exports = merge(common, {
       staticOptions: {
         hot: true
       },
-      directory: './dist'
+      directory: './build'
     },
     compress: true,
   },
