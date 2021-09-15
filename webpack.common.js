@@ -15,6 +15,7 @@ module.exports = {
     alias: {
       react: path.join(__dirname, 'node_modules', 'react'),
     },
+    extensions: ['.wasm', '.mjs', '.js', '.jsx', '.ts', '.tsx', '.json'] 
   },
   module: {
     rules: [
@@ -32,10 +33,13 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
+      {
+        test: /\.m?js/,
+        resolve: {
+            fullySpecified: false
+        }
+    },
     ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
   },
   plugins: [
     new HtmlWebPackPlugin({
